@@ -12,6 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 //import libraryInterfaces.InvertLib;
 
+import com.iiitb.imageEffectApplication.model.LogModel;
+import com.iiitb.imageEffectApplication.service.*;
+import com.iiitb.imageEffectApplication.controller.*;
+
 import java.io.IOException;
 
 @Service
@@ -56,7 +60,10 @@ public class PhotoEffectService {
             // ACTUAL WORK STARTS HERE
 
             // TODO
-            Pixel[][] modifiedImage = BrightnessInterface.applyBrightness(inputImage,amount/100); // Replace this with actual modified image
+            //Brightness 
+            Pixel[][] modifiedImage = BrightnessInterface.applyBrightness(inputImage,amount/100);
+            String fileName = imageFile.getOriginalFilename();
+            loggingService.addLog(fileName,"Brightness","3");// Replace this with actual modified image
 
             // ACTUAL WORK ENDS HERE
 
@@ -80,8 +87,8 @@ public class PhotoEffectService {
             // ACTUAL WORK STARTS HERE
 
             // TODO
-            System.out.println(amount);
-            Pixel[][] modifiedImage = inputImage; // Replace this with actual modified image
+            System.out.println((amount-100)/100);
+            Pixel[][] modifiedImage = ContrastInterface.applyContrast(inputImage,amount/100); // Replace this with actual modified image
 
             // ACTUAL WORK ENDS HERE
 
@@ -174,6 +181,11 @@ public class PhotoEffectService {
 
             // TODO
             Pixel[][] modifiedImage = InvertInterface.applyInvert(inputImage); // Replace this with actual modified image
+            //LogModel new_log = new LogModel("time","nameq","name2","name3");
+            String fileName = imageFile.getOriginalFilename();
+            loggingService.addLog(fileName,"Invert","3");
+
+
 
             // ACTUAL WORK ENDS HERE
 

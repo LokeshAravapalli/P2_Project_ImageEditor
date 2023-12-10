@@ -1,7 +1,8 @@
 #include "Invert.h"
 #include "../Pixel.h" 
 
-vector<vector<Pixel>> applyInvert(vector<vector<Pixel>>& image) {
+//vector<vector<Pixel>> 
+void applyInvert(vector<vector<Pixel>>& image) {
     vector<vector<Pixel>> modifiedImage = image; 
     for (size_t i = 0; i < modifiedImage.size(); ++i) {
         for (size_t j = 0; j < modifiedImage[i].size(); ++j) {
@@ -10,6 +11,6 @@ vector<vector<Pixel>> applyInvert(vector<vector<Pixel>>& image) {
             modifiedImage[i][j].b = 255 - modifiedImage[i][j].b;
         }
     }
-
-    return modifiedImage;
+    image = modifiedImage;
+    //return modifiedImage;
 }

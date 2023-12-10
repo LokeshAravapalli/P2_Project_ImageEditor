@@ -52,7 +52,8 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
 
-    imageVector = applyInvert(imageVector);
+    //imageVector = 
+    applyInvert(imageVector);
     // Call the function here
     // TODO
 

@@ -45,14 +45,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
     }
 
 
-
-
-
-
-
-
-
-
+    imageVector = applyContrast(imageVector,amount);
     // Call the function here
     // TODO
 
