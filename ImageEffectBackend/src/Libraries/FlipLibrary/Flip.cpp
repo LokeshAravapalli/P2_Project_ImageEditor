@@ -1,28 +1,25 @@
 #include "Flip.h"
-#include "../Pixel.h"
 
-vector<vector<Pixel>> applyFlip(vector<vector<Pixel>>& image,int horizontalFlipValue, int verticalFlipValue){
+//vector<vector<Pixel>> 
+void applyFlip(vector<vector<Pixel>>& image,int horizontalFlipValue, int verticalFlipValue){
     vector<vector<Pixel>> modifiedImage = image;
-    int width = image.size();
-    int height = image[0].size();
+    int height = image.size();
+    int width = image[0].size();
     
     if(horizontalFlipValue==1){
-        for (int y = 0; y < height; ++y) {
-            for (int x = 0; x < width / 2; ++x) {
-                Pixel temp = modifiedImage[y][x];
-                modifiedImage[y][x] = modifiedImage[y][width - x - 1];
-                modifiedImage[y][width - x - 1] = temp;
+        for (int x = 0; x < width; ++x) {
+            for (int y = 0; y < height; ++y) {
+                modifiedImage[y][x] = image[y][width - x - 1];
             }
         }
     }
+    image = modifiedImage;
     if(verticalFlipValue==1){
         for (int x = 0; x < width; ++x) {
-            for (int y = 0; y < height / 2; ++y) {
-                Pixel temp = modifiedImage[y][x];
-                modifiedImage[y][x] = modifiedImage[height - y - 1][x];
-                modifiedImage[height - y - 1][x] = temp;
+            for (int y = 0; y < height; ++y) {
+                modifiedImage[y][x] = image[height - y - 1][x];
             }
         }
     }
-    return modifiedImage;
+    image = modifiedImage;
 }
