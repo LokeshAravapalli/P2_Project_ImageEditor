@@ -4,6 +4,8 @@ import com.iiitb.imageEffectApplication.libraryInterfaces.Pixel;
 import com.iiitb.imageEffectApplication.utils.ProcessingUtils;
 
 import com.iiitb.imageEffectApplication.libraryInterfaces.*;
+import com.iiitb.imageEffectApplication.effectImplementations.*;
+import com.iiitb.imageEffectApplication.exception.IllegalParameterException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -61,9 +63,14 @@ public class PhotoEffectService {
 
             // TODO
             //Brightness 
-            Pixel[][] modifiedImage = BrightnessInterface.applyBrightness(inputImage,amount/100);
+            BrightnessEffect brightnessEffect = new BrightnessEffect();
+            brightnessEffect.setParameterValue(amount);
             String fileName = imageFile.getOriginalFilename();
-            loggingService.addLog(fileName,"Brightness","3");// Replace this with actual modified image
+            Pixel[][] modifiedImage = brightnessEffect.apply(inputImage, fileName, loggingService);
+
+            //Pixel[][] modifiedImage = BrightnessInterface.applyBrightness(inputImage,amount/100);
+            //String fileName = imageFile.getOriginalFilename();
+            //loggingService.addLog(fileName,"Brightness","3");// Replace this with actual modified image
 
             // ACTUAL WORK ENDS HERE
 
@@ -71,6 +78,9 @@ public class PhotoEffectService {
 
             return processingUtils.postProcessing(modifiedImage);
 
+        } catch (IllegalParameterException e) {
+            e.printStackTrace(); // Handle the exception as per your application's requirements
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (IOException e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -206,7 +216,7 @@ public class PhotoEffectService {
             // ACTUAL WORK STARTS HERE
 
             // TODO
-            Pixel[][] modifiedImage = inputImage; // Replace this with actual modified image
+            Pixel[][] modifiedImage = RotationInterface.applyRotation(inputImage,value); // Replace this with actual modified image
 
             // ACTUAL WORK ENDS HERE
 
