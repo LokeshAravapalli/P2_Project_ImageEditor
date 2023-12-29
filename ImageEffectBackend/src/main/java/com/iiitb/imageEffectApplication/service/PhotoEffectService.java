@@ -3,21 +3,19 @@ package com.iiitb.imageEffectApplication.service;
 import com.iiitb.imageEffectApplication.libraryInterfaces.Pixel;
 import com.iiitb.imageEffectApplication.utils.ProcessingUtils;
 
-import com.iiitb.imageEffectApplication.libraryInterfaces.*;
-import com.iiitb.imageEffectApplication.effectImplementations.*;
-import com.iiitb.imageEffectApplication.exception.IllegalParameterException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-//import libraryInterfaces.InvertLib;
 
 import com.iiitb.imageEffectApplication.model.LogModel;
 import com.iiitb.imageEffectApplication.service.*;
 import com.iiitb.imageEffectApplication.controller.*;
 
+import com.iiitb.imageEffectApplication.libraryInterfaces.*;
+import com.iiitb.imageEffectApplication.effectImplementations.*;
+import com.iiitb.imageEffectApplication.exception.IllegalParameterException;
 import java.io.IOException;
 
 @Service
@@ -68,9 +66,6 @@ public class PhotoEffectService {
             String fileName = imageFile.getOriginalFilename();
             Pixel[][] modifiedImage = brightnessEffect.apply(inputImage, fileName, loggingService);
 
-            //Pixel[][] modifiedImage = BrightnessInterface.applyBrightness(inputImage,amount/100);
-            //String fileName = imageFile.getOriginalFilename();
-            //loggingService.addLog(fileName,"Brightness","3");// Replace this with actual modified image
 
             // ACTUAL WORK ENDS HERE
 

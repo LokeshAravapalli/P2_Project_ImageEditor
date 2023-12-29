@@ -13,7 +13,7 @@ public class BrightnessEffect implements SingleValueParameterizableEffect {
     private boolean isParameterSet;
 
     public void setParameterValue(float parameterValue) throws IllegalParameterException {
-        if (parameterValue < -0.0f || parameterValue > 200.0f) {
+        if (parameterValue < 0.0f || parameterValue > 200.0f) {
             throw new IllegalParameterException("Brightness value must be between 0.0 and 200.0");
         }
         this.brightnessValue = parameterValue;

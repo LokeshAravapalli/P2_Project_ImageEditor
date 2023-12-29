@@ -1,7 +1,7 @@
 package com.iiitb.imageEffectApplication.effectImplementations;
 
 import com.iiitb.imageEffectApplication.baseEffects.PhotoEffect;
-import com.iiitb.imageEffectApplication.baseEffects.*;
+import com.iiitb.imageEffectApplication.baseEffects.DiscreteEffect;
 import com.iiitb.imageEffectApplication.exception.IllegalParameterException;
 import com.iiitb.imageEffectApplication.libraryInterfaces.*;
 import com.iiitb.imageEffectApplication.libraryInterfaces.Pixel;
@@ -27,7 +27,7 @@ public class FlipEffect implements DiscreteEffect {
     public Pixel[][] apply(Pixel[][] imageFile, String fileName, LoggingService loggingService) {
         String optionValue1 = String.valueOf(horizontalFlipValue);
         String optionValue2 = String.valueOf(verticalFlipValue);
-        String optionValues = optionValue1+optionValue2;
+        String optionValues = optionValue1+","+optionValue2;
         loggingService.addLog(fileName,"Flip",optionValues);
         imageFile = FlipInterface.applyFlip(imageFile,horizontalFlipValue,verticalFlipValue);
         return imageFile;

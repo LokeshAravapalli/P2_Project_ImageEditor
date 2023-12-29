@@ -8,9 +8,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 @Service
 public class LoggingService {
     private ArrayList<LogModel> logs = new ArrayList<LogModel>();
+    private final String logFilePath = "logs.txt"; 
 
     public void addLog(String fileName, String effectName, String optionValues) {
         LocalDateTime dateTime = LocalDateTime.now();
@@ -18,9 +26,34 @@ public class LoggingService {
         String formattedDateTime = dateTime.format(dateTimeFormatter);
         LogModel new_log = new LogModel(formattedDateTime,fileName,effectName,optionValues);
         this.logs.add(new_log);
+
+        String logString = formattedDateTime+"#"+fileName+"#"+effectName+"#"+optionValues;
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("logs.txt", true))) {
+            writer.write(logString);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<LogModel> getAllLogs() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("logs.txt"))) {
+            String line;
+            logs.clear();
+            while ((line = reader.readLine()) != null) {
+                String[] logData = line.split("#");
+                if (logData.length >= 4) {
+                    String formattedDateTime = logData[0];
+                    String fileName = logData[1];
+                    String effectName = logData[2];
+                    String optionValues = logData[3];
+                    LogModel new_log = new LogModel(formattedDateTime,fileName,effectName,optionValues);
+                    this.logs.add(new_log);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return logs;
     }
 
@@ -30,12 +63,17 @@ public class LoggingService {
             if(log.getEffectName().equals(effectName)){
                 logsByEffect.add(log);
             }
-           // System.out.println(logs.get(i).getTimestamp());
         }
         return logsByEffect;
     }
 
     public void clearLogs() {
+        try (PrintWriter writer = new PrintWriter(new FileWriter(logFilePath, false))) {
+            writer.print(""); // Clears the content of the file
+            System.out.println("File content cleared successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         logs.clear();
     }
 
