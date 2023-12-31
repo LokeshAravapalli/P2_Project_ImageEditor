@@ -2,6 +2,11 @@
 
 vector<vector<Pixel>> applyContrast(vector<vector<Pixel>>& image,float contrastFactor){
     vector<vector<Pixel>> modifiedImage = image;
+    if(contrastFactor<100){
+        contrastFactor = ((float)(200/3) + (float)(contrastFactor/3))/100;
+    }else{
+        contrastFactor = contrastFactor/100;
+    }
     for (size_t i = 0; i < modifiedImage.size(); ++i) {
         for (size_t j = 0; j < modifiedImage[i].size(); ++j) {
         modifiedImage[i][j].r = (int) (contrastFactor * (modifiedImage[i][j].r - 128) + 128);

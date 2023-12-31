@@ -7,21 +7,21 @@ import com.iiitb.imageEffectApplication.libraryInterfaces.*;
 import com.iiitb.imageEffectApplication.libraryInterfaces.Pixel;
 import com.iiitb.imageEffectApplication.service.*;
 
-public class BrightnessEffect implements SingleValueParameterizableEffect {
+public class GaussianBlurEffect implements SingleValueParameterizableEffect {
 
-    private float brightnessValue;
+    private float radius;
 
     public void setParameterValue(float parameterValue) throws IllegalParameterException {
-        if (parameterValue < 0.0f || parameterValue > 200.0f) {
-            throw new IllegalParameterException("Brightness value must be between 0.0 and 200.0");
+        if (parameterValue < 0 || parameterValue > 50) {
+            throw new IllegalParameterException("Radius value must be between 0.0 and 50.0");
         }
-        this.brightnessValue = parameterValue;
+        this.radius = parameterValue;
     }
 
     public Pixel[][] apply(Pixel[][] imageFile, String fileName, LoggingService loggingService) {
-        String optionValues = String.valueOf(brightnessValue);
-        loggingService.addLog(fileName,"Brightness",optionValues);
-        imageFile = BrightnessInterface.applyBrightness(imageFile,brightnessValue/100);
+        String optionValues = String.valueOf(radius);
+        loggingService.addLog(fileName,"GaussianBlur",optionValues);
+        imageFile = GaussianBlurInterface.applyGaussianBlur(imageFile,radius);
         return imageFile;
     }
 }

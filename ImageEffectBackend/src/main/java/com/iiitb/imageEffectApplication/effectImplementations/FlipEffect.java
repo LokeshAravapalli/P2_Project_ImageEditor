@@ -25,10 +25,17 @@ public class FlipEffect implements DiscreteEffect {
     }
 
     public Pixel[][] apply(Pixel[][] imageFile, String fileName, LoggingService loggingService) {
-        String optionValue1 = String.valueOf(horizontalFlipValue);
-        String optionValue2 = String.valueOf(verticalFlipValue);
-        String optionValues = optionValue1+","+optionValue2;
-        loggingService.addLog(fileName,"Flip",optionValues);
+        String optionValue = "No option selected";
+        if(horizontalFlipValue==1){
+            optionValue = "HorizontalFlip";
+        }
+        if(verticalFlipValue==1){
+            optionValue = "VerticalFlip";
+        }
+        if(horizontalFlipValue==1 & verticalFlipValue==1){
+            optionValue = "HorizontalFlip and VerticalFlip";
+        }
+        loggingService.addLog(fileName,"Flip",optionValue);
         imageFile = FlipInterface.applyFlip(imageFile,horizontalFlipValue,verticalFlipValue);
         return imageFile;
     }

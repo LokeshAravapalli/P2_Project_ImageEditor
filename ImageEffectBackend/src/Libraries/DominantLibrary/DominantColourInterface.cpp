@@ -1,11 +1,11 @@
-#include "com_iiitb_imageEffectApplication_libraryInterfaces_HueSaturationInterface.h"
-#include "HueSaturation.h"
+#include "com_iiitb_imageEffectApplication_libraryInterfaces_DominantColourInterface.h"
+#include "DominantColour.h"
 #include "../Pixel.h"
 #include <vector>
 using namespace std;
 
-JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInterfaces_HueSaturationInterface_applyHueSaturation
-  (JNIEnv * env, jclass jobj, jobjectArray image, jfloat saturationValue, jfloat hueValue) {
+JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInterfaces_DominantColourInterface_applyDominantColour
+  (JNIEnv * env, jclass jobj, jobjectArray image) {
 
     vector< vector<Pixel> > imageVector;
     jsize rows = env->GetArrayLength(image);
@@ -45,17 +45,9 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
     }
 
 
-
-
-
-
-
-
-
-
     // Call the function here
-    applyHueSaturation(imageVector,hueValue,saturationValue);
     // TODO
+    getDominantColour(imageVector);
 
 
 
