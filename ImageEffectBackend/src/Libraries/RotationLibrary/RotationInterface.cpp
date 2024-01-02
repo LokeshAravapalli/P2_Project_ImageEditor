@@ -55,7 +55,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
     // Call the function here
-    imageVector = applyRotation(imageVector,value);
+    applyRotation(imageVector,value);
     // TODO
 
 
@@ -76,7 +76,6 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
         for (jsize j = 0; j < ncols; ++j) {
             const Pixel &pixel = imageVector[i][j];
             jobject pixelObj = env->AllocObject(pixelClass);
-          //  cout<<pixel.r<<pixel.g<<pixel.b<<endl;
             env->SetIntField(pixelObj, env->GetFieldID(pixelClass, "r", "I"), pixel.r);
             env->SetIntField(pixelObj, env->GetFieldID(pixelClass, "g", "I"), pixel.g);
             env->SetIntField(pixelObj, env->GetFieldID(pixelClass, "b", "I"), pixel.b);

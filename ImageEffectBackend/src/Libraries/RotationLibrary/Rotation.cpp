@@ -1,6 +1,6 @@
 #include "Rotation.h"
 
-vector<vector<Pixel>> applyRotation(vector<vector<Pixel>>& image,int rotation){
+void applyRotation(vector<vector<Pixel>>& image,int rotation){
     int height = image.size();
     int width = image[0].size();
     if(rotation%2==1){
@@ -25,5 +25,5 @@ vector<vector<Pixel>> applyRotation(vector<vector<Pixel>>& image,int rotation){
             }
         }
     }
-    return modifiedImage;
+    image = modifiedImage;
 }

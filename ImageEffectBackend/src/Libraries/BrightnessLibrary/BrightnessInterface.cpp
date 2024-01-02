@@ -52,7 +52,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
 
-    imageVector = applyBrightness(imageVector,amount);
+    applyBrightness(imageVector,amount);
     // Call the function here
     // TODO
 

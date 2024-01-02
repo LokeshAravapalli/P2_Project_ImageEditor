@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<vector<Pixel>> applySepia(vector<vector<Pixel>>& image);
+void applySepia(vector<vector<Pixel>>& image);
 
 
 #endif // SEPIA_H

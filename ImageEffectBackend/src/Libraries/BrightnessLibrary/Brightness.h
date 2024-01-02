@@ -4,6 +4,6 @@
 #include <vector>
 #include "../Pixel.h" 
 using namespace std;
-vector<vector<Pixel>> applyBrightness(vector<vector<Pixel>>& image,float amount);
+void applyBrightness(vector<vector<Pixel>>& image,float amount);
 
 #endif

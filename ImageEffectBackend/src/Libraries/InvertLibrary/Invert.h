@@ -4,7 +4,6 @@
 #include <vector>
 #include "../Pixel.h" 
 using namespace std;
-//vector<vector<Pixel>> 
 void applyInvert(vector<vector<Pixel>>& image);
 
 #endif

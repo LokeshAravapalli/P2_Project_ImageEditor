@@ -54,7 +54,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
     // Call the function here
-    imageVector = applySharpen(imageVector,amount);
+    applySharpen(imageVector,amount);
     // TODO
 
 

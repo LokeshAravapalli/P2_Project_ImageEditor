@@ -5,7 +5,7 @@
 #include "../Pixel.h"
 using namespace std;
 
-vector<vector<Pixel>> applyGrayscale(vector<vector<Pixel>>& image);
+void applyGrayscale(vector<vector<Pixel>>& image);
 
 
 #endif // GREYSCALE_H

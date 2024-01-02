@@ -1,127 +1,78 @@
 #include "Sharpen.h"
 #include "../Pixel.h" 
 
-vector<vector<Pixel>> applySharpen(vector<vector<Pixel>>& image, float amount) {
+vector<vector<Pixel>> padImage(const vector<vector<Pixel>>& image, int paddingSize) {
+  int rows = image.size();
+  int cols = image[0].size();
 
-    float mappedValue = (float)amount / 100.0f;
-    vector<vector<Pixel>> sharpenedImage = image;
+  vector<vector<Pixel>> paddedImage(rows + 2 * paddingSize, vector<Pixel>(cols + 2 * paddingSize));
 
-    int centralWeight = 5; 
-    int surroundWeight = -1;
-
-    int adjustedCentralWeight = centralWeight + 5 * mappedValue;
-    int adjustedSurroundWeight = surroundWeight - mappedValue;
-
-    float c=amount/10;
-    float s=c*-0.2;
-    vector<vector<float>> kernel = {
-        {0, s, 0},
-        {s, c, s},
-        {0, s, 0}
-        
-    };
-
-    int kernelSize = kernel.size();
-    int halfKernelSize = kernelSize / 2;
-
-    for (size_t i = halfKernelSize; i < image.size() - halfKernelSize; ++i) {
-        for (size_t j = halfKernelSize; j < image[i].size() - halfKernelSize; ++j) {
-            int sumR = 0, sumG = 0, sumB = 0;
-
-            for (int x = -halfKernelSize; x <= halfKernelSize; ++x) {
-                for (int y = -halfKernelSize; y <= halfKernelSize; ++y) {
-                    sumR += image[i + x][j + y].r * kernel[x + halfKernelSize][y + halfKernelSize];
-                    sumG += image[i + x][j + y].g * kernel[x + halfKernelSize][y + halfKernelSize];
-                    sumB += image[i + x][j + y].b * kernel[x + halfKernelSize][y + halfKernelSize];
-                }
-            }
-
-            sumR = min(max(sumR, 0), 255);
-            sumG = min(max(sumG, 0), 255);
-            sumB = min(max(sumB, 0), 255);
-
-            sharpenedImage[i][j].r = sumR;
-            sharpenedImage[i][j].g = sumG;
-            sharpenedImage[i][j].b = sumB;
-        }
+  // Fill the padded image with zeros
+  for (int i = 0; i < rows + 2 * paddingSize; ++i) {
+    for (int j = 0; j < cols + 2 * paddingSize; ++j) {
+      paddedImage[i][j].r = 0;
+      paddedImage[i][j].g = 0;
+      paddedImage[i][j].b = 0;
     }
-    float namount = 100-(100-amount);
-    for (size_t i = 0; i < sharpenedImage.size(); ++i) {
-        for (size_t j = 0; j < sharpenedImage[i].size(); ++j) {
-            sharpenedImage[i][j].r = (sharpenedImage[i][j].r * namount <= 255) ? sharpenedImage[i][j].r * namount : 255;
-            sharpenedImage[i][j].g = (sharpenedImage[i][j].g * namount <= 255) ? sharpenedImage[i][j].g * namount : 255;
-            sharpenedImage[i][j].b = (sharpenedImage[i][j].b * namount <= 255) ? sharpenedImage[i][j].b * namount : 255;
-        }
-    }
+  }
 
-    return sharpenedImage;
+  // Copy the original image data to the padded image
+  for (int i = 0; i < rows; ++i) {
+    for (int j = 0; j < cols; ++j) {
+      paddedImage[i + paddingSize][j + paddingSize] = image[i][j];
+    }
+  }
+
+  return paddedImage;
 }
+// Apply sharpening filter to the image
+void applySharpen(vector<vector<Pixel>>& imageVector, float amountt) {
+  // Define the sharpening kernel
+  float amount =amountt /30;
+  const int kernelSize = 3;
+  float kernel[kernelSize][kernelSize] = {
+    {-1, -1, -1},
+    {-1, 9, -1},
+    {-1, -1, -1}
+  };
 
+  // Pad the image with zeros to prevent edge effects
+  vector<vector<Pixel>> paddedImage = padImage(imageVector, kernelSize / 2);
 
-// #include <vector>
-// #include "bitmap.h"
+  // Apply the convolution filter
+  for (int i = kernelSize / 2; i < paddedImage.size() - kernelSize / 2; ++i) {
+    for (int j = kernelSize / 2; j < paddedImage[i].size() - kernelSize / 2; ++j) {
+      Pixel& pixel = imageVector[i - kernelSize / 2][j - kernelSize / 2];
 
-// using namespace std;
+      // Calculate the weighted sum of neighboring pixels
+      float sumR = 0.0f;
+      float sumG = 0.0f;
+      float sumB = 0.0f;
+      for (int k = 0; k < kernelSize; ++k) {
+        for (int l = 0; l < kernelSize; ++l) {
+          int neighborX = i + k - kernelSize / 2;
+          int neighborY = j + l - kernelSize / 2;
+          Pixel neighborPixel = paddedImage[neighborX][neighborY];
+          sumR += neighborPixel.r * kernel[k][l];
+          sumG += neighborPixel.g * kernel[k][l];
+          sumB += neighborPixel.b * kernel[k][l];
+        }
+      }
 
-/*
- * NOTE!
- *
- * This only works with 24-bit based uncompressed Bitmap format.
- * Use this tool below to convert your image into compatible format.
- * https://online-converting.com/image/convert2bmp/
- * also, don't forget to choose "Color" option to "24 Bit (True Color)."
- *
- * The algorithm is based on this tutorial (with few changes)
- * https://lodev.org/cgtutor/filtering.html#Sharpen
- *
- */
+      // Apply the sharpening factor
+      sumR *= amount;
+      sumG *= amount;
+      sumB *= amount;
 
+      // Add the original pixel value to the weighted sum
+      pixel.r = static_cast<int>(pixel.r + sumR);
+      pixel.g = static_cast<int>(pixel.g + sumG);
+      pixel.b = static_cast<int>(pixel.b + sumB);
 
-// double filter[5][5] =
-// {
-//   -1, -1, -1, -1, -1,
-//   -1,  2,  2,  2, -1,
-//   -1,  2,  8,  2, -1,
-//   -1,  2,  2,  2, -1,
-//   -1, -1, -1, -1, -1,
-// };
-
-// int filterWidth=5;
-// int filterHeight=5;
-
-// double factor = (amount+20)/500;
-// double bias = 0.0;
-
-// //int main () {
-
-//     int h = bmp.size();
-//     int w = bmp[0].size();
-
-//     // SHARPENING!
-
-//     for (int x = 0; x < w; x++) {
-//       for (int y = 0; y < h; y++) {
-//         double red = 0.0;
-//         double green = 0.0;
-//         double blue = 0.0;
-
-//         for (int filterY = 0; filterY < filterHeight; filterY++) {
-//           for (int filterX = 0; filterX < filterWidth; filterX++) {
-//             int imageX = (x - filterWidth / 2 + filterX + w) % w;
-//             int imageY = (y - filterHeight / 2 + filterY + h) % h;
-//             red += bmp[imageY][imageX].r * filter[filterY][filterX];
-//             green += bmp[imageY][imageX].g * filter[filterY][filterX];
-//             blue += bmp[imageY][imageX].b * filter[filterY][filterX];
-//           }
-//         }
-
-//         bmp[y][x].r =  min(max(int(factor * red + bias), 0), 255);
-//         bmp[y][x].g =  min(max(int(factor * green + bias), 0), 255);
-//         bmp[y][x].b =  min(max(int(factor * blue + bias), 0), 255);
-//       }
-//     }
-
-//     // END SHARPENING!
-
-//     return bmp;
-//   }
+      // Ensure color values are within bounds (0-255)
+      pixel.r = max(0, min(pixel.r, 255));
+      pixel.g = max(0, min(pixel.g, 255));
+      pixel.b = max(0, min(pixel.b, 255));
+    }
+  }
+}

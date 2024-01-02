@@ -52,8 +52,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
 
-    
-    imageVector = applySepia(imageVector);
+    applySepia(imageVector);
     // Call the function here
     // TODO
 

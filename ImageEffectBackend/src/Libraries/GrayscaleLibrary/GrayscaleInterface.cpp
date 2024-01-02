@@ -53,7 +53,7 @@ JNIEXPORT jobjectArray JNICALL Java_com_iiitb_imageEffectApplication_libraryInte
 
 
     
-    imageVector = applyGrayscale(imageVector);
+    applyGrayscale(imageVector);
     // Call the function here
     // TODO
 
