@@ -43,3 +43,8 @@ Now you can start using the application.
 
 ## Contribution
 
+- **[Team Member Name](link-to-profile)**:
+  - Implemented feature X.
+  - Resolved issue Y.
+  - Reviewed pull requests.
+  - Provided guidance on architecture design.
