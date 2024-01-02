@@ -5,11 +5,11 @@ import com.iiitb.imageEffectApplication.exception.IllegalParameterException;
 import com.iiitb.imageEffectApplication.libraryInterfaces.*;
 import com.iiitb.imageEffectApplication.service.*;
 
-public class SepiaEffect implements PhotoEffect{
+public class SepiaEffect implements PhotoEffect{//implements PhotoEffect interface
 
-    public Pixel[][] apply(Pixel[][] imageFile, String fileName, LoggingService loggingService) {
-        loggingService.addLog(fileName,"Sepia","no value");
-        imageFile = SepiaInterface.applySepia(imageFile);
+    public Pixel[][] apply(Pixel[][] imageFile, String fileName, LoggingService loggingService) {//this effect does not take any parameter values, this function applies sepia effect
+        loggingService.addLog(fileName,"Sepia","no value");//adding to logs
+        imageFile = SepiaInterface.applySepia(imageFile);//applying the effect
         return imageFile;
     }
 }
