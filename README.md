@@ -43,7 +43,7 @@ Now you can start using the application.
 
 ## Contribution
 
-- **[Team Member Name]**:
+- **[Team Member Name]()**:
   - Implemented feature X.
   - Resolved issue Y.
   - Reviewed pull requests.
