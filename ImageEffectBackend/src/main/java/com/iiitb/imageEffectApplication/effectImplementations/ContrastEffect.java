@@ -7,7 +7,7 @@ import com.iiitb.imageEffectApplication.libraryInterfaces.*;
 import com.iiitb.imageEffectApplication.libraryInterfaces.Pixel;
 import com.iiitb.imageEffectApplication.service.*;
 
-public class ContrastEffect implements SingleValueParameterizableEffect {//implementing Single Value Parameter
+public class ContrastEffect implements SingleValueParameterizableEffect {//implementing Single Value Parameter interface
 
     private float contrastValue;
 
