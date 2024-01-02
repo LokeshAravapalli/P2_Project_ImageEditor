@@ -25,7 +25,21 @@ For each effect we have created "effect"Effcet.java for each effect. In that we 
 In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
 In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
 
-### Effects Implmeted:
+### Effects/Feautures Implmeted:
 * Brightness  
+* Contrast
+* Flip
+* GrayScale
+* Invert
+* Rotation
+* Sepia
+* Logs
+### Optional Effects/Feautures implemented:
+* Hue Saturation
+* Gaussian Blur
+* Sharpen
+* Dominant Colour
+* The logs can retain the complete history of previous runs, not just the history of the present run.
 
 ## Contribution
+
