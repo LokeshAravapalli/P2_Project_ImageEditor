@@ -25,7 +25,7 @@ Now you can start using the application.
 * In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
 * In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
 
-### Effects/Feautures Implmeted:
+### Effects/Feautures Implemented:
 * Brightness  
 * Contrast
 * Flip
@@ -34,7 +34,7 @@ Now you can start using the application.
 * Rotation
 * Sepia
 * Logs
-### Optional Effects/Feautures implemented:
+### Optional Effects/Feautures Implemented:
 * Hue Saturation
 * Gaussian Blur
 * Sharpen
