@@ -67,6 +67,5 @@ Soma Datta
 Chinmay
 - **Logs**:
 Lokesh
-- **EffectImplementation Package**:  
-Lokesh  
-Pradyumna  
+- **EffectImplementation Package**:
+Lokesh,Pradyumna  
