@@ -13,14 +13,14 @@ Now you can start using the application.
 
 ## Description
 ### This is how we implemented our project:
-In ImageEffectBackend/src/Libraries we have a sub folder for each effect named "effect"Library.  
-In that we have written our code in 3 files namely "effect".cpp,"effect".h,"effect"Interface.cpp.  
-In "effect".cpp we implemented our logic to modify the image.    
-In "effect".h we have declared our function which we defined in "effect".cpp.   
-In "effect"Interface.cpp we have called our function which we have defined in "effect".cpp    
+* In ImageEffectBackend/src/Libraries we have a sub folder for each effect named "effect"Library.  
+* In that we have written our code in 3 files namely "effect".cpp,"effect".h,"effect"Interface.cpp.  
+* In "effect".cpp we implemented our logic to modify the image.    
+* In "effect".h we have declared our function which we defined in "effect".cpp.   
+* In "effect"Interface.cpp we have called our function which we have defined in "effect".cpp    
    
-Inside src/main/java/com/iiitb/imageEffectApplication we have created "effectImplementations" package.   
-For each effect we have created "effect"Effcet.java for each effect. In that we have implemented the interface of appropriate base effcets. Each effect class has an apply method that calls the "effect"Intaeface.apply"effect". This apply method also calls addLog method of logging service.     
+* Inside src/main/java/com/iiitb/imageEffectApplication we have created "effectImplementations" package.   
+* For each effect we have created "effect"Effect.java for each effect. In that we have implemented the interface of appropriate base effects. Each effect class has an apply method that calls the "effect"Interface.apply"effect". This apply method also calls addLog method of logging service.     
    
 In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
 In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
