@@ -13,6 +13,11 @@ Now you can start using the application.
 
 ## Description
 ### This is how we implemented our project:
+In ImageEffectBackend/src/Libraries we have a sub folder for each effect named "effect"Library.  
+In that we have written our code in 3 files namely "effect".cpp,"effect".h,"effect"Interface.cpp.  
+In "effect".cpp we implemented our logic to modify the image.    
+In "effect".h we have declared our function which we defined in "effect".cpp.   
+In "effect"Interface.cpp we have called our function which we have defined in "effect".cpp    
 
 
 ## Contribution
