@@ -1,122 +1,76 @@
-#include"HueSaturation.h"
-#include <cmath>
+#include "HueSaturation.h"
+#include "../Pixel.h"
 #include <algorithm>
-#include <iostream>
+#include <cmath>
 #include <vector>
-
+using namespace std;
 
 // Function to convert RGB to HSL
-void RGBtoHSL(const Pixel& pixel, double& hue, double& saturation, double& lightness) {
-    double r = pixel.r / 255.0;
-    double g = pixel.g / 255.0;
-    double b = pixel.b / 255.0;
-
-    double cmax = std::max({r, g, b});
-    double cmin = std::min({r, g, b});
+void rgbToHsl(int r, int g, int b, double& h, double& s, double& l) {
+    double dr = r / 255.0;
+    double dg = g / 255.0;
+    double db = b / 255.0;
+    double cmax = max(dr, max(dg, db));
+    double cmin = min(dr, min(dg, db));
     double delta = cmax - cmin;
-
-    lightness = (cmax + cmin) / 2;
-
+    l = (cmax + cmin) / 2.0;
+    s = (delta == 0) ? 0 : delta / (1 - abs(2 * l - 1));
     if (delta == 0) {
-        hue = 0; // Undefined, set to 0
-    } else if (cmax == r) {
-        hue = 60 * fmod(((g - b) / delta), 6);
-    } else if (cmax == g) {
-        hue = 60 * (((b - r) / delta) + 2);
-    } else if (cmax == b) {
-        hue = 60 * (((r - g) / delta) + 4);
-    }
-
-    if (delta == 0) {
-        saturation = 0;
+        h = 0;  // undefined, but commonly set to 0
+    } else if (cmax == dr) {
+        h = 60.0 * fmod(((dg - db) / delta), 6.0);
+    } else if (cmax == dg) {
+        h = 60.0 * (((db - dr) / delta) + 2.0);
     } else {
-        saturation = delta / (1 - std::abs(2 * lightness - 1));
+        h = 60.0 * (((dr - dg) / delta) + 4.0);
     }
+    h = fmod((h + 360.0), 360.0);
 }
 
 // Function to convert HSL to RGB
-Pixel HSLtoRGB(double hue, double saturation, double lightness) {
-    double c = (1 - std::abs(2 * lightness - 1)) * saturation;
-    double x = c * (1 - std::abs(fmod((hue / 60), 2) - 1));
-    double m = lightness - c / 2;
-
-    double r1, g1, b1;
-    if (hue >= 0 && hue < 60) {
-        r1 = c;
-        g1 = x;
-        b1 = 0;
-    } else if (hue >= 60 && hue < 120) {
-        r1 = x;
-        g1 = c;
-        b1 = 0;
-    } else if (hue >= 120 && hue < 180) {
-        r1 = 0;
-        g1 = c;
-        b1 = x;
-    } else if (hue >= 180 && hue < 240) {
-        r1 = 0;
-        g1 = x;
-        b1 = c;
-    } else if (hue >= 240 && hue < 300) {
-        r1 = x;
-        g1 = 0;
-        b1 = c;
+void hslToRgb(double h, double s, double l, int& r, int& g, int& b) {
+    double c = (1 - abs(2 * l - 1)) * s;
+    double x = c * (1 - abs(fmod(h / 60.0, 2.0) - 1));
+    double m = l - c / 2.0;
+    double rp, gp, bp;
+    if (h >= 0 && h < 60) {
+        rp = c;
+        gp = x;
+        bp = 0;
+    } else if (h >= 60 && h < 120) {
+        rp = x;
+        gp = c;
+        bp = 0;
+    } else if (h >= 120 && h < 180) {
+        rp = 0;
+        gp = c;
+        bp = x;
+    } else if (h >= 180 && h < 240) {
+        rp = 0;
+        gp = x;
+        bp = c;
+    } else if (h >= 240 && h < 300) {
+        rp = x;
+        gp = 0;
+        bp = c;
     } else {
-        r1 = c;
-        g1 = 0;
-        b1 = x;
+        rp = c;
+        gp = 0;
+        bp = x;
     }
-
-    int r = static_cast<int>(((r1 + m) * 255));
-    int g = static_cast<int>(((g1 + m) * 255));
-    int b = static_cast<int>(((b1 + m) * 255));
-
-    r = r%255;
-    g = g%255;
-    b = b%255;
-    return {r, g, b};
-}
-
-// Function to apply hue adjustment to the entire image
-void applyHueAdjustment(std::vector<std::vector<Pixel>>& image, double hueAdjustment) {
-    for (auto& row : image) {
-        for (auto& pix : row) {
-            double hue, saturation, lightness;
-            RGBtoHSL(pix, hue, saturation, lightness);
-
-            // Adjust hue
-            hue += hueAdjustment;
-
-            // Wrap hue value within the valid range (0-360 degrees)
-            hue = fmod(hue, 360.0);
-            if (hue < 0) {
-                hue += 360.0;
-            }
-
-            pix = HSLtoRGB(hue, saturation, lightness);
-        }
-    }
-}
-
-// Function to apply saturation adjustment to the entire image
-void applySaturationAdjustment(std::vector<std::vector<Pixel>>& image, double saturationAdjustment) {
-    for (auto& row : image) {
-        for (auto& pix : row) {
-            double hue, saturation, lightness;
-            RGBtoHSL(pix, hue, saturation, lightness);
-
-            // Adjust saturation
-            saturation *= saturationAdjustment;
-
-            // Clamp saturation value between 0 and 1
-            saturation = std::max(0.0, std::min(saturation, 1.0));
-
-            pix = HSLtoRGB(hue, saturation, lightness);
-        }
-    }
+    r = int((rp + m) * 255.0);
+    g = int((gp + m) * 255.0);
+    b = int((bp + m) * 255.0);
 }
 
 void applyHueSaturation(vector<vector<Pixel>>& image, double hue, double saturation) {
-            applyHueAdjustment(image, hue*3.6);
-            applySaturationAdjustment(image, saturation/100);
+    for (vector<Pixel>& row : image) {
+        for (Pixel& pixel : row) {
+            double h, s, l;
+            rgbToHsl(pixel.r, pixel.g, pixel.b, h, s, l);
+            h = fmod((hue*3.6), 360.0);
+            s = saturation/100;
+            hslToRgb(h, s, l, pixel.r, pixel.g, pixel.b);
+        }
+    }
 }

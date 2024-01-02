@@ -1,0 +1,58 @@
+2024-01-02 10:51:50#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 2.0
+2024-01-02 10:51:53#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 10.0
+2024-01-02 10:51:57#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 51.0
+2024-01-02 10:52:02#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 92.0
+2024-01-02 10:52:10#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 9.0,Stauration Value: 92.0
+2024-01-02 10:52:17#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 92.0
+2024-01-02 10:52:20#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 92.0
+2024-01-02 10:52:23#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 53.0,Stauration Value: 92.0
+2024-01-02 10:52:27#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 66.0,Stauration Value: 92.0
+2024-01-02 10:52:31#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 80.0,Stauration Value: 92.0
+2024-01-02 10:52:35#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 89.0,Stauration Value: 92.0
+2024-01-02 10:52:38#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 92.0
+2024-01-02 10:54:51#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 92.0
+2024-01-02 10:54:55#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 54.0
+2024-01-02 10:54:58#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 10.0
+2024-01-02 10:55:01#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 0.0
+2024-01-02 10:55:04#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 49.0
+2024-01-02 10:55:06#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 61.0,Stauration Value: 49.0
+2024-01-02 10:55:09#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 49.0
+2024-01-02 10:55:16#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 29.0,Stauration Value: 49.0
+2024-01-02 10:55:19#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 95.0,Stauration Value: 49.0
+2024-01-02 10:55:25#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 49.0
+2024-01-02 10:55:26#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 49.0
+2024-01-02 10:55:26#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 49.0
+2024-01-02 10:55:31#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 85.0,Stauration Value: 49.0
+2024-01-02 10:55:35#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 67.0,Stauration Value: 49.0
+2024-01-02 10:58:42#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 40.0,Stauration Value: 49.0
+2024-01-02 10:58:42#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 14.0,Stauration Value: 49.0
+2024-01-02 10:59:10#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 14.0,Stauration Value: 49.0
+2024-01-02 10:59:13#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 49.0,Stauration Value: 49.0
+2024-01-02 10:59:16#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 72.0,Stauration Value: 49.0
+2024-01-02 10:59:18#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 94.0,Stauration Value: 49.0
+2024-01-02 10:59:21#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 49.0
+2024-01-02 10:59:22#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 49.0
+2024-01-02 10:59:24#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 32.0
+2024-01-02 10:59:27#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 100.0
+2024-01-02 10:59:30#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 8.0
+2024-01-02 11:00:22#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 8.0
+2024-01-02 11:00:25#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 67.0
+2024-01-02 11:00:28#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 100.0,Stauration Value: 67.0
+2024-01-02 11:00:31#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 80.0,Stauration Value: 67.0
+2024-01-02 11:00:33#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 53.0,Stauration Value: 67.0
+2024-01-02 11:00:36#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 29.0,Stauration Value: 67.0
+2024-01-02 11:00:38#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 0.0,Stauration Value: 67.0
+2024-01-02 11:00:41#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 8.0,Stauration Value: 67.0
+2024-01-02 11:00:44#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 8.0,Stauration Value: 100.0
+2024-01-02 11:00:49#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 10.0,Stauration Value: 100.0
+2024-01-02 11:00:52#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 19.0,Stauration Value: 100.0
+2024-01-02 11:00:55#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 27.0,Stauration Value: 100.0
+2024-01-02 11:00:58#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 38.0,Stauration Value: 100.0
+2024-01-02 11:01:02#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 48.0,Stauration Value: 100.0
+2024-01-02 11:01:05#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 60.0,Stauration Value: 100.0
+2024-01-02 11:05:25#Screenshot 2023-12-06 212853.png#Hue and Saturation#Hue Value: 25.0,Stauration Value: 100.0
+2024-01-02 11:14:26#Screenshot 2023-12-06 212853.png#Brightness#100.0
+2024-01-02 11:14:29#Screenshot 2023-12-06 212853.png#Brightness#180.0
+2024-01-02 11:14:37#Screenshot 2023-12-06 212853.png#Contrast#100.0
+2024-01-02 11:14:39#Screenshot 2023-12-06 212853.png#Contrast#169.0
+2024-01-02 11:14:44#Screenshot 2023-12-06 212853.png#Contrast#0.0
