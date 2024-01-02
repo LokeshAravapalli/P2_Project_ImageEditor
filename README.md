@@ -43,8 +43,34 @@ Now you can start using the application.
 
 ## Contribution
 
-- **Team Member Name**:
-  - Implemented feature X.
-  - Resolved issue Y.
-  - Reviewed pull requests.
-  - Provided guidance on architecture design.
+- **Brightness**:
+ - 
+ - 
+ - 
+
+- **Contrast**:
+ - 
+ - 
+
+- **Dominant Colour**:
+ - 
+ - 
+
+- **Flip**:
+ - 
+ - 
+
+- **Gaussian Nlur**:
+ - 
+ - 
+
+- **Gray Scale**:
+ - 
+ - 
+- **Hue Saturation**:
+- **Invert**:
+- **Rotation**:
+- **Sepia**:
+- **Sharpen**:
+- **Logs**:
+- **EffectImplementation Package**:
