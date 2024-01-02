@@ -44,33 +44,29 @@ Now you can start using the application.
 ## Contribution
 
 - **Brightness**:
- - j
- - 
- - 
-
+Sathwik
 - **Contrast**:
- - 
- - 
-
+Chinmay
 - **Dominant Colour**:
- - 
- - 
-
+Pradyumna
 - **Flip**:
- - 
- - 
-
-- **Gaussian Nlur**:
- - 
- - 
-
+Srinivas
+- **Gaussian Blur**:
+Sathwik
 - **Gray Scale**:
- - 
- - 
+Soma Datta
 - **Hue Saturation**:
+Lokesh
 - **Invert**:
+Pradyumna
 - **Rotation**:
+Srinivas
 - **Sepia**:
+Soma Datta
 - **Sharpen**:
+Chinmay
 - **Logs**:
+Lokesh
 - **EffectImplementation Package**:
+Lokesh
+Pradyumna
