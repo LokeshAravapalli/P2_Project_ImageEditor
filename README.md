@@ -22,8 +22,8 @@ Now you can start using the application.
 * Inside src/main/java/com/iiitb/imageEffectApplication we have created "effectImplementations" package.   
 * For each effect we have created "effect"Effect.java for each effect. In that we have implemented the interface of appropriate base effects. Each effect class has an apply method that calls the "effect"Interface.apply"effect". This apply method also calls addLog method of logging service.     
    
-In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
-In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
+* In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
+* In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
 
 ### Effects/Feautures Implmeted:
 * Brightness  
