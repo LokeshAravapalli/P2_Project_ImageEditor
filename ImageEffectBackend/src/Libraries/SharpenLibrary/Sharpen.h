@@ -4,6 +4,6 @@
 #include <vector>
 #include "../Pixel.h" 
 using namespace std;
-void applySharpen(vector<vector<Pixel>>& image,float amount);
+void applySharpen(vector<vector<Pixel>>& image,float amount);//declaring the function
 
 #endif

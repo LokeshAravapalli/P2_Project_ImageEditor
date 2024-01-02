@@ -4,5 +4,5 @@
 #include<vector>
 using namespace std;
 
-void applyContrast(vector<vector<Pixel>>& image,float contrastFactor);
+void applyContrast(vector<vector<Pixel>>& image,float contrastFactor);//declaring the function
 #endif

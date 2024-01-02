@@ -1,14 +1,11 @@
 #include "Invert.h"
-#include "../Pixel.h" 
 
 void applyInvert(vector<vector<Pixel>>& image) {
-    vector<vector<Pixel>> modifiedImage = image; 
-    for (size_t i = 0; i < modifiedImage.size(); ++i) {
-        for (size_t j = 0; j < modifiedImage[i].size(); ++j) {
-            modifiedImage[i][j].r = 255 - modifiedImage[i][j].r;
-            modifiedImage[i][j].g = 255 - modifiedImage[i][j].g;
-            modifiedImage[i][j].b = 255 - modifiedImage[i][j].b;
+    for (int i = 0; i < image.size(); ++i) {
+        for (int j = 0; j < image[i].size(); ++j) {
+            image[i][j].r = 255 - image[i][j].r;  
+            image[i][j].g = 255 - image[i][j].g; //logic for inverting image
+            image[i][j].b = 255 - image[i][j].b;
         }
     }
-    image = modifiedImage;
 }

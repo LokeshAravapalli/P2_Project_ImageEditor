@@ -1,5 +1,4 @@
 #include "GaussianBlur.h"
-#include <vector>
 #include <cmath>   
 #include <numeric>  
 using namespace std;
@@ -9,27 +8,27 @@ void applyGaussianBlur(vector<vector<Pixel>>& image, float radius) {
     int height = image.size();
     int width = image[0].size();
 
-    // Create a temporary copy of the image to store the modified values
+    // creating a temporary copy of the image to store the modified values
     vector<vector<Pixel>> modifiedImage(height, vector<Pixel>(width));
 
-    // Gaussian kernel size and weights
+    // gaussian kernel size and weights
     int kernelSize = static_cast<int>(2 * radius) + 1;
     vector<float> kernel(kernelSize);
     float sigma = radius / 3.0f;
 
-    // Generate the 1D Gaussian kernel
+    // generating the 1D Gaussian kernel
     for (int i = 0; i < kernelSize; ++i) {
         float x = i - static_cast<float>(kernelSize) / 2.0f;
         kernel[i] = exp(-(x * x) / (2 * sigma * sigma));
     }
 
-    // Normalize the kernel weights
+    // normalising the kernel weights
     float sum = accumulate(kernel.begin(), kernel.end(), 0.0f);
     for (int i = 0; i < kernelSize; ++i) {
         kernel[i] /= sum;
     }
 
-    // Apply horizontal blur
+    // applying horizontal blur
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             Pixel blurredPixel = {0, 0, 0};
@@ -46,7 +45,7 @@ void applyGaussianBlur(vector<vector<Pixel>>& image, float radius) {
         }
     }
 
-    // Apply vertical blur
+    // applying vertical blur
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             Pixel blurredPixel = {0, 0, 0};

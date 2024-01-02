@@ -4,6 +4,6 @@
 #include "../Pixel.h" 
 using namespace std;
 
-void applyHueSaturation(vector<vector<Pixel>>& image,double hue,double saturation);
+void applyHueSaturation(vector<vector<Pixel>>& image,double hue,double saturation);//declaring the function
 
 #endif

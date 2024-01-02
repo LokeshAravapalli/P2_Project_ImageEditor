@@ -5,6 +5,6 @@
 #include "../Pixel.h" 
 using namespace std;
 
-void applyFlip(vector<vector<Pixel>>& image,int horizontalFlipValue, int verticalFlipValue);
+void applyFlip(vector<vector<Pixel>>& image,int horizontalFlipValue, int verticalFlipValue);//declaring the function
 
 #endif

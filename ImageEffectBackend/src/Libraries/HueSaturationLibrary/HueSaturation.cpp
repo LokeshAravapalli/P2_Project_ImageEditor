@@ -1,11 +1,8 @@
 #include "HueSaturation.h"
-#include "../Pixel.h"
 #include <algorithm>
 #include <cmath>
-#include <vector>
-using namespace std;
 
-// Function to convert RGB to HSL
+// function to convert RGB to HSL
 void rgbToHsl(int r, int g, int b, double& h, double& s, double& l) {
     double dr = r / 255.0;
     double dg = g / 255.0;
@@ -24,10 +21,10 @@ void rgbToHsl(int r, int g, int b, double& h, double& s, double& l) {
     } else {
         h = 60.0 * (((dr - dg) / delta) + 4.0);
     }
-    h = fmod((h + 360.0), 360.0);
+    h = fmod((h + 360.0), 360.0); 
 }
 
-// Function to convert HSL to RGB
+// function to convert HSL to RGB
 void hslToRgb(double h, double s, double l, int& r, int& g, int& b) {
     double c = (1 - abs(2 * l - 1)) * s;
     double x = c * (1 - abs(fmod(h / 60.0, 2.0) - 1));

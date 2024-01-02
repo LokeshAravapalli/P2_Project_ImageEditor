@@ -4,6 +4,6 @@
 #include "../Pixel.h" 
 using namespace std;
 
-void getDominantColour(vector<vector<Pixel>>& image);
+void getDominantColour(vector<vector<Pixel>>& image);//declaring the function
 
 #endif

@@ -1,5 +1,4 @@
 #include "Sharpen.h"
-#include "../Pixel.h" 
 
 vector<vector<Pixel>> padImage(const vector<vector<Pixel>>& image, int paddingSize) {
   int rows = image.size();

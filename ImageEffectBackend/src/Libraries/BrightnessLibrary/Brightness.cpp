@@ -1,5 +1,4 @@
 #include "Brightness.h"
-#include "../Pixel.h" 
 
 void applyBrightness(vector<vector<Pixel>>& image,float amount) {
     for (int i = 0; i < image.size(); ++i) {

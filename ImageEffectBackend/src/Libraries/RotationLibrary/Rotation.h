@@ -4,6 +4,6 @@
 #include <vector>
 #include "../Pixel.h" 
 using namespace std;
-void applyRotation(vector<vector<Pixel>>& image,int rotation);
+void applyRotation(vector<vector<Pixel>>& image,int rotation);//declaring the function
 
 #endif
