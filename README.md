@@ -20,9 +20,12 @@ In "effect".h we have declared our function which we defined in "effect".cpp.
 In "effect"Interface.cpp we have called our function which we have defined in "effect".cpp    
    
 Inside src/main/java/com/iiitb/imageEffectApplication we have created "effectImplementations" package.   
-For each effect we have created "effect"Effcet.java for each effect. In that we have implemented the interface of appropriate base effcets.   
+For each effect we have created "effect"Effcet.java for each effect. In that we have implemented the interface of appropriate base effcets. Each effect class has an apply method that calls the "effect"Intaeface.apply"effect". This apply method also calls addLog method of logging service.     
    
 In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
+In src/main/java/com/iiitb/imageEffectApplication/service/PhotoEffectService.java we have created objects of Effects written in effectImplementations package applied effects after setting parameter if needed.
 
+### Effects Implmeted:
+* Brightness  
 
 ## Contribution
