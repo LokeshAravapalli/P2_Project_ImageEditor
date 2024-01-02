@@ -44,7 +44,7 @@ Now you can start using the application.
 ## Contribution
 
 - **Brightness**:
- - 
+ - j
  - 
  - 
 
