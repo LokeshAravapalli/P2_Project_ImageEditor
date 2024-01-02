@@ -18,6 +18,11 @@ In that we have written our code in 3 files namely "effect".cpp,"effect".h,"effe
 In "effect".cpp we implemented our logic to modify the image.    
 In "effect".h we have declared our function which we defined in "effect".cpp.   
 In "effect"Interface.cpp we have called our function which we have defined in "effect".cpp    
+   
+Inside src/main/java/com/iiitb/imageEffectApplication we have created "effectImplementations" package.   
+For each effect we have created "effect"Effcet.java for each effect. In that we have implemented the interface of appropriate base effcets.   
+   
+In src/main/java/com/iiitb/imageEffectApplication/service we have completed LoggingService.java.
 
 
 ## Contribution
